@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">AnimalShelterApi</h1>
+    
+</div>
+<p>
+    AnimalShelterApi is an easier way to find multiple animals from different shelters, making use of specefic searches. You can create a shelter to upload, delete and update the data of your animals.
+</p>
+
+<p>The data of the animals from this API is conform by the name of the animal, the sex, the specie, the race, the state and the age, you will recive this data in the next format: id,name,specie,race,sex,state,age,shelterid</p>
+
+<p>If you want to use this API to search animals, you migth follow this specifics terms:
+    <br />
+    <ul>
+        <li>The link to use any function of the API is AnimalsSheltes.com/api/animals/...</li>
+        <li>To make an specific search you might use the differents terms of search and the parameters to search, an example of this: AnimalShelter.com/api/Animals/SpeciesAndRaceGet?specie=dog&race=pitbull</li>
+        <li>Always follow the order of the parameters, that are the same order that are in the term search, example: SpeciesRaceAndAge?specie=dog&race=pitbull&age=2</li>
+        <li>For make this more easy, always put the parameters in the following order: species,race,name,age,sex. Also this is apply to the search terms</li>
+    </ul>
+    <br />
+    The search terms are the follow:
+    <ul>
+        <li>AnimalsGet allows you to search all the animals in te database</li>
+        <li>ShelterGet allows you to search all the animals in the shelter with an id specific</li>
+        <li>IdGet and NameGet allows you to search an animal with an id or an name</li>
+        <li>You can search animals with specific parameters using the parameters+get, also you must add "And" before the last paramaters if you are searching more than one parameter, example: AnimalShelter.com/api/Animals/SpeciesAndRaceGet"</li>
+    </ul>
+</p>
+
+<p>
+    If you want to add a shelter and/or manipulate the data from your animals in your own shelter, you must first create a shelter.<br />
+    You must use AnimalShelter/api/Animals/ShelterPost to create a shelter, also you need add one name, then, when you did that, you will recive one owner code, this is use for any modification of your shelter.<br />
+    With AnimalPost you can create a new animal in your shelter, the parameters for this are the following: specie,race,name,sex,state,age,owner.<br />
+    You can use AnimalPut to modify the state of one animal, this use the parameters of the state, the animal id and your owner code: state, id, owner<br />
+    To delete an animal, you must use AnimalDelete, with the id of the animal and your owner code: id,owner.
+</p>
